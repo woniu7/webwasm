@@ -82,15 +82,15 @@ function getInt32Memory0() {
     return cachedInt32Memory0;
 }
 /**
-* @param {string} name
+* @param {string} _name
 * @returns {string}
 */
-export function greet(name) {
+export function greet(_name) {
     let deferred2_0;
     let deferred2_1;
     try {
         const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-        const ptr0 = passStringToWasm0(name, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const ptr0 = passStringToWasm0(_name, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         const len0 = WASM_VECTOR_LEN;
         wasm.greet(retptr, ptr0, len0);
         var r0 = getInt32Memory0()[retptr / 4 + 0];

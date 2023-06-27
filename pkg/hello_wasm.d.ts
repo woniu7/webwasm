@@ -1,10 +1,10 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
-* @param {string} name
+* @param {string} _name
 * @returns {string}
 */
-export function greet(name: string): string;
+export function greet(_name: string): string;
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
