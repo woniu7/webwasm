@@ -1,0 +1,34 @@
+<script>
+const randomStringFromServer = "127912378912639812739812739812738123781927389127938712893792817389123";
+const publicKeyCredentialCreationOptions = {
+    challenge: Uint8Array.from(
+        randomStringFromServer, c => c.charCodeAt(0)),
+    rp: {
+        name: "wangrd",
+        id: "wrdmbp.local",
+    },
+    user: {
+        id: Uint8Array.from(
+            "UZSL85T9", c => c.charCodeAt(0)),
+        name: "lee@webauthn.guide",
+        displayName: "Lee",
+    },
+    pubKeyCredParams: [{alg: -7, type: "public-key"}],
+    authenticatorSelection: {
+        authenticatorAttachment: "platform",
+    },
+    timeout: 60000,
+    attestation: "direct"
+};
+
+var credential = 1
+async function main() {
+	credential = await navigator.credentials.create({
+	    publicKey: publicKeyCredentialCreationOptions
+	});
+}
+
+console.log("hello world!!!");
+main();
+//console.log(credential);
+</script>
